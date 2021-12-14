@@ -37,6 +37,18 @@ def show_roc_curve(y, y_pred, style = 'seaborn', figsize=(10,5), extra_title = '
 
 
 def print_regress_metrics(y, y_pred):
+    ''' 
+    This function print the plot the R^2, MAE, MSE, RMSE and MAPE score of a regression model
+
+    Args:
+        y (pandas.Series): The real target values.
+        y_pred (pandas.Series): The target values predicted by the model.
+    
+    Returns:
+        None
+
+    '''
+
     print("R^2 score:", round(r2_score(y_pred, y), 4))
     print("MAE score:", round(mean_absolute_error(y_pred, y), 4))
     print("MSE score:", round(mean_squared_error(y_pred, y), 4))
@@ -47,6 +59,19 @@ def print_regress_metrics(y, y_pred):
 
 
 def print_classif_metrics(y, y_pred):
+    ''' 
+    This function print the plot the accuracy, recall, precision, F1 score and AUC
+        of a classification model
+
+    Args:
+        y (pandas.Series): The real target values.
+        y_pred (pandas.Series): The target values predicted by the model.
+    
+    Returns:
+        None
+
+    '''
+
     print(f'Accuracy score: {round(accuracy_score(y_pred, y), 3)} %')
     print(f'Recall score: {round(recall_score(y_pred, y), 3)} %')
     print(f'Precision score: {round(precision_score(y_pred, y), 3)} %')
