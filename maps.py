@@ -1,6 +1,6 @@
 def maps(latitude = 40.4167 , longitude = -3.70325, zoom = 6):
-    '''Esta función muestra un mapa en función de la latitud, longitud y zoom introducidos.
-    Por defecto mostrará España'''
+    '''This function displays a map based on the latitude, longitude, and zoom.
+    By default it will show Spain'''
 
     import folium
     from IPython.display import display
