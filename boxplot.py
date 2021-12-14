@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+import seaborn as sns 
+
 def draw_boxplot(df, column, color = "b", figsize=(8,8), title = None, label_column_name = None):
     '''
     This function makes a box plot for a specific column.
@@ -8,8 +11,6 @@ def draw_boxplot(df, column, color = "b", figsize=(8,8), title = None, label_col
     title: graph name.
     label_column_name: column to be graphed.
     '''
-    import matplotlib.pyplot as plt
-    import seaborn as sns 
     
     plt.figure(figsize=figsize)
     sns.boxplot(x=df[column], color=color)
