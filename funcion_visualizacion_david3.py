@@ -1,10 +1,12 @@
 def tres_countplot(data, column_ax0, column_ax1, column_ax2, column_hue0, column_hue1, column_hue2, title0, title1,
                      title2, palette1, palette2, palette3):
-    '''Esta función realiza tres gráficos countplot verticales con leyenda incluída, títulos
-    y etiquetas con rotación en 45 grados y paleta de colores a escoger. Cuando se llame a la función, se ha de realizar lo siguiente: en data se introduce el dataframe, 
-    en column_ax0, column_ax1, column_ax2 se introducen las columnas o variables que se desea representar y column_hue0, column_hue1, column_hue2 se introduce el valor que se desea
-    representar dentro de las gráficas de coutplot, title0, title1, title2 son los títulos de cada subplot, palette1, palette2 y palette3 son las paletas de color para cada subplot.
-    '''
+    '''This function performs three vertical countplot graphs with included legend, titles
+    and labels with 45 degree rotation and color palette to choose from. When the function is called, the following must be done: 
+    -data: the dataframe is entered,
+    -column_ax0, column_ax1, column_ax2: you enter the columns or variables you want to represent
+    -column_hue0, column_hue1, column_hue2: you enter the value you want to represent within the coutplot graphs, 
+    -title0, title1, title2 are the titles of each subplot,
+    -palette1, palette2 and palette3 are the color palettes for each subplot'''
     import matplotlib.pyplot as plt
     import seaborn as sns 
     fig, axes = plt.subplots(1, 3,  figsize=(20, 8))

@@ -1,6 +1,8 @@
 def draw_sunburst(data_frame, path, color):
-    '''Esta función realiza un sunburst, cuando se llame, en "data_frame" se introduce el dataframe, en "path", con una lista, se introducen las dos columnas o variables 
-    que interesa representar, en "color" se introduce la columna o variable principal, que será el valor que adopta la gráfica'''
+    '''This function performs a sunburst, when it is called, in 
+    -"data_frame":the dataframe is entered,
+    -"path": introduce with a list, the two columns or variables to be represented
+    -"color": enter the column or main variable, which will be the value that the graph adopts'''
     import plotly.express as px
     fig = px.sunburst(
     data_frame = data_frame,
