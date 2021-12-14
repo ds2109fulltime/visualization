@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def statistic_values(df, figsize=(10,8), palette="crest", s= 500, alpha=0.8,  title = None ,fontsize=18, loc_legend= "upper left"):
+def draw_statistic_values(df, figsize=(10,8), palette="crest", s= 500, alpha=0.8,  title = None ,fontsize=18, loc_legend= "upper left"):
     ''' 
     This function shows in a scatterplot the 5 most common statistic measures of each numeric column of the dataframe:
         mean: the average

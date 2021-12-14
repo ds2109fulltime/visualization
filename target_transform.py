@@ -1,10 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 from scipy import stats
 import seaborn as sns
 
 
-def target_transform(target, figsize=(15,5), color = "b"):
+def draw_target_transformation(column, figsize=(15,5), color = "b"):
                 
         ''' 
         This function shows the distribution of a dataframe specific column. 
@@ -20,7 +21,7 @@ def target_transform(target, figsize=(15,5), color = "b"):
         ----------------
         
         Args:
-        target = here we define the column we want to see the transformations of 
+        column = here we define the column we want to see the transformations of. Value must be inserted as Pandas Series
         figsize = here we define the graph size, it has to be a tuple with 2 values
         color = here we define the bars color. Default value is blue ("b")
         
@@ -35,17 +36,21 @@ def target_transform(target, figsize=(15,5), color = "b"):
         fig,axes = plt.subplots(1, 4, figsize=figsize, sharey=True)
 
         # Original target
-        sns.histplot(target, kde=False, color= color, ax=axes[0])
+        sns.histplot(column, kde=False, color= color, ax=axes[0])
         axes[0].set_title("Original target")
 
         # Logaritmic
-        sns.histplot(np.log(target),kde=False, color= color, ax=axes[1])
+        sns.histplot(np.log(column),kde=False, color= color, ax=axes[1])
         axes[1].set_title("Log")
 
         # Box-cox
-        sns.histplot(stats.boxcox(target)[0],kde=False,color= color,  ax=axes[2])
-        axes[2].set_title("Box-Cox");
+        #here we define a try/except to manage some critical values
+        try:
+                sns.histplot(stats.boxcox(column)[0],kde=False,color= color,  ax=axes[2])
+                axes[2].set_title("Box-Cox");
+        except:
+                print("To visualize the boxcox graphs, values must be positive and different from zero.")
 
         # Power 2
-        sns.histplot(np.power(target, 2),kde=False, color= color, ax=axes[3])
+        sns.histplot(np.power(column, 2),kde=False, color= color, ax=axes[3])
         axes[3].set_title("Power 2");
