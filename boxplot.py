@@ -8,6 +8,7 @@ def draw_boxplot(df, column, color = "b", figsize=(8,8), title = None, label_col
     df: dataframe
     column: column to be represented.
     color: color to be used.
+    figsize = here we define the graph size, it has to be a tuple with 2 values
     title: graph name.
     label_column_name: column to be graphed.
     '''
